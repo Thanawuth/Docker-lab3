@@ -5,9 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { BooksModule } from './books/books.module';
 import { Book } from './books/entities/book.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
